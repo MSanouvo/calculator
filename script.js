@@ -33,3 +33,7 @@ function calculate(operator, a, b){
 
 console.log(calculate(factorial, 2, 3))
 
+//DOMS
+
+const display = document.querySelector('span')
+display.textContent = 'Test'
