@@ -51,10 +51,11 @@ h1{
 
 .buttons{
     display: flex;
-    height: 60px;
-    /*width: 100px; */
+    flex: auto;
+    height: 50px;
+    width: 50px;
     background-color: orange;
-    margin: 5px;
+    margin: 2px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -62,44 +63,4 @@ h1{
     flex-wrap: wrap;
 }
 
-.left,
-.right{
-    border: 1px solid blue;
-    height: 500px;
-    margin: 5px;
-    justify-content: center;
-}
-.left{
-    display: flex;
-    flex-direction: row;
-    flex: 2;
-    width: 300px;
-    flex-wrap: wrap;
-    
-}
 
-.right{
-    display: flex;
-    width: 120px;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.numbers,
-.extras{
-    margin: 5px;
-}
-
-.numbers{
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid red;
-    height: 80%;
-}
-
-.extras{
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid yellow;
-    height: 10%;
-}
