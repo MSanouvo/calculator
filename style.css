@@ -1,0 +1,105 @@
+html{
+    margin: auto;
+    width: 70%;
+}
+
+body{
+    border: 1px solid black;
+    
+}
+
+h1{
+    text-align: center;
+}
+.display{
+    display: flex;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    height: 50px;
+    justify-content: right;
+    align-items: center;
+}
+
+#button-container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    height: 800px;
+    padding: 5px;
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+.row{
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.buttons{
+    display: flex;
+    height: 60px;
+    /*width: 100px; */
+    background-color: orange;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.left,
+.right{
+    border: 1px solid blue;
+    height: 500px;
+    margin: 5px;
+    justify-content: center;
+}
+.left{
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    width: 300px;
+    flex-wrap: wrap;
+    
+}
+
+.right{
+    display: flex;
+    width: 120px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.numbers,
+.extras{
+    margin: 5px;
+}
+
+.numbers{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    height: 80%;
+}
+
+.extras{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid yellow;
+    height: 10%;
+}
