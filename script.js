@@ -34,13 +34,25 @@ function calculate(operator, a, b){
 console.log(calculate(factorial, 2, 3))
 
 //DOMS
-let displayText = ''
+let displayText1 = ''
+let displayText2 = ''
+let operator = null
 const display = document.querySelector('span')
-display.textContent = displayText
+const buttonContainer = document.querySelector('#button-container')
+display.textContent = displayText1 //display empty container at program start
 
-const zero = document.querySelector("#zero")
-zero.addEventListener('click', () =>{
-    displayText += '0'
-    display.textContent = displayText
-    console.log(displayText)
+//event delegation for buttons in container
+buttonContainer.addEventListener('click', (e) =>{
+    let target = e.target;
+    console.log(target.id)
+    //button press events for numbers
+    if(target.id < 10){
+        displayText1 += target.id
+        display.textContent = displayText1
+    }else if(target.id === 'zero'){
+        if(displayText1 != ''){
+            displayText1 += '0'
+            display.textContent = displayText1
+        } //Doesn't add 0 to an empty container
+    }
 })
