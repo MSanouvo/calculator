@@ -64,4 +64,11 @@ h1{
     flex-wrap: wrap;
 }
 
+.number{
+    background-color: rgba(0, 89, 255, 0.774);
+}
+
+.operator{
+    background-color: rgb(95, 226, 43);
+}
 
