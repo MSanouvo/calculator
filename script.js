@@ -4,7 +4,7 @@ function addition(a,b){
 };
 
 function subtraction(a,b){
-    return a-b;
+    return b-a;
 };
 
 function multiplication(a,b){
@@ -28,7 +28,16 @@ function factorial(a,b){
 }
 
 function calculate(operator, a, b){
-    return operator(a,b);
+    if(operator === '+'){
+        return addition(a, b)
+    }else if(operator === '-'){
+        return subtraction(a,b)
+    }else if(operator === 'x'){
+        return multiplication(a,b)
+    }
+    else if(operator === '/'){
+        return division(a,b)
+    }
 }
 
 console.log(calculate(factorial, 2, 3))
@@ -86,5 +95,10 @@ buttonContainer.addEventListener('click', (e) =>{
         console.log(operator) 
     }
 
-    
+    if(target.id === 'enter'){
+        display.textContent = calculate(operator, displayText1, displayText2)
+        displayText1 = ''
+        displayText2 = ''
+        operator = null
+    }
 })
