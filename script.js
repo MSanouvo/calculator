@@ -34,6 +34,13 @@ function calculate(operator, a, b){
 console.log(calculate(factorial, 2, 3))
 
 //DOMS
-
+let displayText = ''
 const display = document.querySelector('span')
-display.textContent = 'Test'
+display.textContent = displayText
+
+const zero = document.querySelector("#zero")
+zero.addEventListener('click', () =>{
+    displayText += '0'
+    display.textContent = displayText
+    console.log(displayText)
+})
