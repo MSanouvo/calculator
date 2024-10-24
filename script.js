@@ -1,10 +1,10 @@
 //functions
 function addition(a,b){
-    return a+b;
+    return Number(a)+Number(b);
 };
 
 function subtraction(a,b){
-    return b-a;
+    return a-b;
 };
 
 function multiplication(a,b){
@@ -53,9 +53,17 @@ display.textContent = displayText1 //display empty container at program start
 //event delegation for buttons in container
 buttonContainer.addEventListener('click', (e) =>{
     let target = e.target;
+
+    //enter button to display calculated answer and reset displays/operators
+    if(target.id === 'enter'){
+        displayText1 = calculate(operator, displayText1, displayText2)
+        display.textContent = displayText1
+        operator = null
+        displayText2 = ''
+   }
     
-    //condition for display 1
-    if(operator != null){
+    //condition for display 1, before operator press
+    if(operator === null){
         //button press events for numbers
         if(target.id < 10){
             displayText1 += target.id
@@ -67,10 +75,6 @@ buttonContainer.addEventListener('click', (e) =>{
             } //Doesn't add 0 to an empty container
         }
 
-        if(target.id === 'clear'){
-            displayText1 = ''
-            display.textContent = displayText1
-        }
     }else{//condition for display 2
         if(target.id < 10){
             displayText2 += target.id
@@ -81,24 +85,21 @@ buttonContainer.addEventListener('click', (e) =>{
                 display.textContent = displayText2
             } //Doesn't add 0 to an empty container
         }
-        //clear 
-        if(target.id === 'clear'){
-            displayText2 = ''
-            display.textContent = displayText2
-        }
+    }
+
+    //clear everything, reset display
+    if(target.id === 'clear'){
+        displayText1 = ''
+        displayText2 = ''
+        operator = null
+        display.textContent = displayText1
     }
     
     
     //button press events for operators
     if(target.id === '+' || target.id ===  '-' || target.id ===  'x' || target.id ===  '/'){
-        operator = target.id
-        console.log(operator) 
+        operator = target.id 
     }
 
-    if(target.id === 'enter'){
-        display.textContent = calculate(operator, displayText1, displayText2)
-        displayText1 = ''
-        displayText2 = ''
-        operator = null
-    }
+    
 })
